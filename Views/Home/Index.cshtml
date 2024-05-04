@@ -1,0 +1,62 @@
+﻿@model List<NewsItem>
+@{
+    Layout = null; // No layout for simplicity
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker News Clone</title>
+    <link rel="stylesheet" href="~/css/news.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="#" class="logo">Y</a>
+                <a href="#">new</a> |
+                <a href="#">past</a> |
+                <a href="#">comments</a> |
+                <a href="#">ask</a> |
+                <a href="#">show</a> |
+                <a href="#">jobs</a> |
+                <a href="#">submit</a>
+                <a href="@Url.Action("Login", "Account")" class="login">login</a> |
+            </nav>
+        </header>
+        <main>
+            <ul class="news-list">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <span class="rank">@item.Rank.</span>
+                        <a href="@item.Url">@item.Title</a>
+                        <span class="subtext">
+                            <a href="@Url.Action("Profile", "Home", new { username = item.ByUser })">@item.ByUser</a> |
+                            <a href="#">hide</a> |
+                            <a href="@Url.Action("Comments", "Home", new { id = item.Id })">Comments</a>
+                        </span>
+                    </li>
+                }
+            </ul>
+        </main>
+        <footer class="footer">
+            <a href="#">Guidelines</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Lists</a> |
+            <a href="#">API</a> |
+            <a href="#">Security</a> |
+            <a href="#">Legal</a> |
+            <a href="#">Apply to YC</a> |
+            <a href="#">Contact</a>
+            <br><br>
+            <form method="get" action="//hn.algolia.com/">
+                Search: <input type="text" name="q" size="17" autocorrect="off" spellcheck="false" autocapitalize="off" autocomplete="off">
+            </form>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+﻿@model List<Comment> // Assuming you have a Comment model
+
+@{
+    Layout = "_Layout"; // Or your layout file
+}
+
+<h1>Comments</h1>
+<ul>
+    @foreach (var comment in Model)
+    {
+        <li>
+            <strong>@comment.Author</strong> - @comment.Text // Change ByUser to Author
+            <br />
+            Posted on: @comment.PostedOn.ToString("yyyy-MM-dd HH:mm:ss") // Format DateTime
+        </li>
+    }
+</ul>

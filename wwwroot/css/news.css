@@ -1,0 +1,65 @@
+body {
+    font-family: Verdana, Arial, sans-serif;
+    background-color: #f6f6ef;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+header nav {
+    background-color: #ff6600;
+    padding: 8px;
+    text-align: left;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+nav .logo {
+    font-size: 18px;
+    border: 1px solid white;
+    padding: 2px 5px;
+    display: inline-block;
+}
+
+nav .login {
+    float: right;
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+    .news-list li {
+        background-color: white;
+        padding: 8px;
+        margin-top: 5px;
+    }
+
+.rank {
+    font-size: 0.9em;
+    color: #828282;
+    margin-right: 5px;
+}
+
+.news-list a {
+    text-decoration: none;
+    color: black;
+}
+
+.subtext {
+    font-size: 0.75em;
+    color: #828282;
+    display: block;
+    margin-top: 5px;
+}

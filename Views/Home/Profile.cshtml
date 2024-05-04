@@ -1,0 +1,16 @@
+﻿@model HackerNewsClone.Models.UserProfileViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<h1>@Model.User.Username's Profile</h1>
+<p>Email: @Model.User.Email</p>
+
+<h2>Posts</h2>
+<ul>
+    @foreach (var post in Model.Posts)
+    {
+        <li>@post.Title - @post.Content</li>
+    }
+</ul>
